@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'YLPopMenu_Example' do
+  pod 'YLPopMenu', :path => '../'
+
+  target 'YLPopMenu_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
