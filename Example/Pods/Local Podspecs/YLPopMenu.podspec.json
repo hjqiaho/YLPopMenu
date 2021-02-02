@@ -1,0 +1,22 @@
+{
+  "name": "YLPopMenu",
+  "version": "0.1.0",
+  "summary": "A short description of YLPopMenu.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/hjqiaho@163.com/YLPopMenu",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hjqiaho@163.com": "hjqiaho@163.com"
+  },
+  "source": {
+    "git": "https://github.com/hjqiaho@163.com/YLPopMenu.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "YLPopMenu/Classes/**/*"
+}

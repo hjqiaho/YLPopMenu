@@ -28,8 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05905212B2561A1A557229CC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		1CE4B868D349986B9B1738A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		05905212B2561A1A557229CC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		1CE4B868D349986B9B1738A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1E87B8EF6459E6E9FEC3DFC8 /* Pods-YLPopMenu_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLPopMenu_Tests.debug.xcconfig"; path = "Target Support Files/Pods-YLPopMenu_Tests/Pods-YLPopMenu_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		56E5BF9EE0F802717CAEAE6E /* Pods_YLPopMenu_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YLPopMenu_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* YLPopMenu_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLPopMenu_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +43,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		89568D489E627239D08AFD69 /* Pods_YLPopMenu_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YLPopMenu_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BCC4CC60DB870CBAABF9633 /* YLPopMenu.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = YLPopMenu.podspec; path = ../YLPopMenu.podspec; sourceTree = "<group>"; };
+		8BCC4CC60DB870CBAABF9633 /* YLPopMenu.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YLPopMenu.podspec; path = ../YLPopMenu.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CE8A581FC8CBCBACC4D94D49 /* Pods-YLPopMenu_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLPopMenu_Example.release.xcconfig"; path = "Target Support Files/Pods-YLPopMenu_Example/Pods-YLPopMenu_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E4CBB2A9EA84FA0A757030FF /* Pods-YLPopMenu_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLPopMenu_Tests.release.xcconfig"; path = "Target Support Files/Pods-YLPopMenu_Tests/Pods-YLPopMenu_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		ED6E3912D0B40B5368E7DC40 /* Pods-YLPopMenu_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YLPopMenu_Example.debug.xcconfig"; path = "Target Support Files/Pods-YLPopMenu_Example/Pods-YLPopMenu_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -86,7 +86,6 @@
 				1E87B8EF6459E6E9FEC3DFC8 /* Pods-YLPopMenu_Tests.debug.xcconfig */,
 				E4CBB2A9EA84FA0A757030FF /* Pods-YLPopMenu_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

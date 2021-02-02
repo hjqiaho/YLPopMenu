@@ -1,0 +1,6 @@
+framework module YLPopMenu {
+  umbrella header "YLPopMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

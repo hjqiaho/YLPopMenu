@@ -1,0 +1,16 @@
+PODS:
+  - YLPopMenu (0.1.0)
+
+DEPENDENCIES:
+  - YLPopMenu (from `../`)
+
+EXTERNAL SOURCES:
+  YLPopMenu:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  YLPopMenu: 179a4b786a0258a5251ab484edcc1654a7c58193
+
+PODFILE CHECKSUM: ab9065dc4fec3ad17df94cdec22669e8b009029d
+
+COCOAPODS: 1.10.0
