@@ -12,46 +12,46 @@ import UIKit
 @objc public protocol PopMenuAction: NSObjectProtocol {
     
     /// Title of the action.
-    var title: String? { get }
+    @objc var title: String? { get }
     
     /// Image of the action.
-    var image: UIImage? { get }
+    @objc var image: UIImage? { get }
     
     /// Container view of the action.
-    var view: UIView { get }
+    @objc var view: UIView { get }
     
     /// The initial color of the action.
-    var color: Color? { get }
+    @objc var color: Color? { get }
     
     /// The handler of action.
-    var didSelect: PopMenuActionHandler? { get }
+    @objc var didSelect: PopMenuActionHandler? { get }
     
     /// The handler of action. after viewcontroller dismiss
-    var didSelectAfterDismiss: PopMenuActionHandler? { get }
+    @objc var didSelectAfterDismiss: PopMenuActionHandler? { get }
     
     /// Left padding when texts-only.
-    static var textLeftPadding: CGFloat { get }
+    @objc static var textLeftPadding: CGFloat { get }
     
     /// Icon left padding when icons are present.
-    static var iconLeftPadding: CGFloat { get }
+    @objc static var iconLeftPadding: CGFloat { get }
     
     /// Icon sizing.
-    var iconWidthHeight: CGFloat { get set }
+    @objc var iconWidthHeight: CGFloat { get set }
     
     /// The color to set for both label and icon.
-    var tintColor: UIColor { get set }
+    @objc var tintColor: UIColor { get set }
     
     /// The font for label.
-    var font: UIFont { get set }
+    @objc var font: UIFont { get set }
     
     /// The corner radius of action view.
-    var cornerRadius: CGFloat { get set }
+    @objc var cornerRadius: CGFloat { get set }
     
     /// Is the view highlighted by gesture.
-    var highlighted: Bool { get set }
+    @objc var highlighted: Bool { get set }
     
     /// Render the view for action.
-    func renderActionView()
+    @objc func renderActionView()
 
     /// Called when the action gets selected.
     @objc optional func actionSelected(animated: Bool)
@@ -65,36 +65,36 @@ import UIKit
 }
 
 /// The default PopMenu action class.
-public class PopMenuDefaultAction: NSObject, PopMenuAction {
+@objc public class PopMenuDefaultAction: NSObject, PopMenuAction {
     
     /// Title of action.
-    public let title: String?
+    @objc public let title: String?
     
     /// Icon of action.
-    public let image: UIImage?
+    @objc public let image: UIImage?
     
     /// Image rendering option.
-    public var imageRenderingMode: UIImage.RenderingMode = .alwaysTemplate
+    @objc public var imageRenderingMode: UIImage.RenderingMode = .alwaysTemplate
     
     /// Renderred view of action.
-    public let view: UIView
+    @objc public let view: UIView
     
     /// Color of action.
-    public let color: Color?
+    @objc public let color: Color?
     
     /// Handler of action when selected.
-    public let didSelect: PopMenuActionHandler?
+    @objc public let didSelect: PopMenuActionHandler?
     
     /// Handler of action when selected. after viewcontroller dissmis
-    public let didSelectAfterDismiss: PopMenuActionHandler?
+    @objc public let didSelectAfterDismiss: PopMenuActionHandler?
 
     /// Icon sizing.
-    public var iconWidthHeight: CGFloat = 27
+    @objc public var iconWidthHeight: CGFloat = 27
     
     // MARK: - Computed Properties
     
     /// Text color of the label.
-    public var tintColor: Color {
+    @objc public var tintColor: Color {
         get {
             return titleLabel.textColor
         }
@@ -106,7 +106,7 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
     }
     
     /// Font for the label.
-    public var font: UIFont {
+    @objc public var font: UIFont {
         get {
             return titleLabel.font
         }
@@ -116,7 +116,7 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
     }
     
     /// Rounded corner radius for action view.
-    public var cornerRadius: CGFloat {
+    @objc public var cornerRadius: CGFloat {
         get {
             return view.layer.cornerRadius
         }
@@ -126,7 +126,7 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
     }
     
     /// Inidcates if the action is being highlighted.
-    public var highlighted: Bool = false {
+    @objc public var highlighted: Bool = false {
         didSet {
             guard highlighted != oldValue else { return }
             
@@ -135,12 +135,12 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
     }
     
     /// Background color for highlighted state.
-    private var backgroundColor: Color = .white
+    @objc private var backgroundColor: Color = .white
 
     // MARK: - Subviews
     
     /// Title label view instance.
-    private lazy var titleLabel: UILabel = {
+    @objc private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = false
@@ -150,7 +150,7 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
     }()
     
     /// Icon image view instance.
-    private lazy var iconImageView: UIImageView = {
+    @objc private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = image?.withRenderingMode(imageRenderingMode)
@@ -160,13 +160,13 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
     
     // MARK: - Constants
     
-    public static let textLeftPadding: CGFloat = 25
-    public static let iconLeftPadding: CGFloat = 18
+    @objc public static let textLeftPadding: CGFloat = 25
+    @objc public static let iconLeftPadding: CGFloat = 18
     
     // MARK: - Initializer
     
     /// Initializer.
-    public init(title: String? = nil, image: UIImage? = nil, color: Color? = nil,didSelect: PopMenuActionHandler? = nil,didSelectAfterDismiss: PopMenuActionHandler? = nil) {
+    @objc public init(title: String? = nil, image: UIImage? = nil, color: Color? = nil,didSelect: PopMenuActionHandler? = nil,didSelectAfterDismiss: PopMenuActionHandler? = nil) {
         self.title = title
         self.image = image
         self.color = color
@@ -202,7 +202,7 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
     }
 
     /// Load and configure the action view.
-    public func renderActionView() {
+    @objc public func renderActionView() {
         view.layer.cornerRadius = 14
         view.layer.masksToBounds = true
         
@@ -211,7 +211,7 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
     
     /// Highlight the view when panned on top,
     /// unhighlight the view when pan gesture left.
-    public func highlightActionView(_ highlight: Bool) {
+    @objc public func highlightActionView(_ highlight: Bool) {
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.26, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 9, options: self.highlighted ? UIView.AnimationOptions.curveEaseIn : UIView.AnimationOptions.curveEaseOut, animations: {
                 self.view.transform = self.highlighted ? CGAffineTransform.identity.scaledBy(x: 1.09, y: 1.09) : .identity
@@ -221,7 +221,7 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
     }
     
     /// When the action is selected.
-    public func actionSelected(animated: Bool) {
+    @objc public func actionSelected(animated: Bool) {
         // Trigger handler.
         didSelect?(self)
         
@@ -241,7 +241,7 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
         }
     }
     /// When the action is selected.AfterDismiss
-    public func actionSelectedAfterDismiss(animated: Bool) {
+    @objc public func actionSelectedAfterDismiss(animated: Bool) {
         // Trigger handler.
         didSelectAfterDismiss?(self)
         

@@ -16,7 +16,7 @@ public typealias Color = UIColor
 
 /// Appearance for PopMenu.
 /// Use for configuring custom styles and looks.
-final public class PopMenuAppearance: NSObject {
+@objc final public class PopMenuAppearance: NSObject {
     
     /// Background and tint colors.
     public var popMenuColor: PopMenuColor = .default()
@@ -28,10 +28,10 @@ final public class PopMenuAppearance: NSObject {
     public var popMenuFont: UIFont = UIFont.systemFont(ofSize: 16, weight: .semibold)
     
     /// Corner radius for rounded corners.
-    public var popMenuCornerRadius: CGFloat = 24
+    @objc public var popMenuCornerRadius: CGFloat = 24
     
     /// How tall each action is.
-    public var popMenuActionHeight: CGFloat = 50
+    @objc public var popMenuActionHeight: CGFloat = 50
     
     /// How many actions are the breakpoint to trigger scrollable.
     public var popMenuActionCountForScrollable: UInt = 6

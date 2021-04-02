@@ -14,21 +14,21 @@ import UIKit
     @objc optional func popMenuDidSelectItem(_ popMenuViewController: PopMenuViewController, at index: Int)
 }
 
-final public class PopMenuViewController: UIViewController {
+@objc final public class PopMenuViewController: UIViewController {
     
     // MARK: - Properties
     
     /// Delegate instance for handling callbacks.
-    public weak var delegate: PopMenuViewControllerDelegate?
+    @objc public weak var delegate: PopMenuViewControllerDelegate?
     
     /// Appearance configuration.
-    public var appearance = PopMenuAppearance()
+    @objc public var appearance = PopMenuAppearance()
     
     /// Background overlay that covers the whole screen.
-    public let backgroundView = UIView()
+    @objc public let backgroundView = UIView()
     
     /// The blur overlay view for translucent illusion.
-    private lazy var blurOverlayView: UIVisualEffectView = {
+    @objc private lazy var blurOverlayView: UIVisualEffectView = {
         let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
         blurView.translatesAutoresizingMaskIntoConstraints = false
         blurView.layer.cornerRadius = appearance.popMenuCornerRadius
@@ -39,45 +39,45 @@ final public class PopMenuViewController: UIViewController {
     }()
     
     /// Main root view that has shadows.
-    public let containerView = UIView()
+    @objc public let containerView = UIView()
     
     /// Main content view.
-    public let contentView = PopMenuGradientView()
+    @objc public let contentView = PopMenuGradientView()
     
     /// The view contains all the actions.
-    public let actionsView = UIStackView()
+    @objc public let actionsView = UIStackView()
     
     /// The source View to be displayed from.
-    private(set) weak var sourceView: AnyObject?
+    @objc private(set) weak var sourceView: AnyObject?
     
     /// The absolute source frame relative to screen.
     private(set) var absoluteSourceFrame: CGRect?
     
     /// The calculated content frame.
-    public lazy var contentFrame: CGRect = {
+    @objc public lazy var contentFrame: CGRect = {
         return calculateContentFittingFrame()
     }()
     
     // MARK: - Configurations
     
     /// Determines whether to dismiss menu after an action is selected.
-    public var shouldDismissOnSelection: Bool = true
+    @objc public var shouldDismissOnSelection: Bool = true
     
     /// Determines whether the pan gesture is enabled on the actions.
-    public var shouldEnablePanGesture: Bool = true
+    @objc public var shouldEnablePanGesture: Bool = true
     
     /// Determines whether enable haptics for iPhone 7 and up.
-    public var shouldEnableHaptics: Bool = true
+    @objc public var shouldEnableHaptics: Bool = true
     
     /// Handler for when the menu is dismissed.
-    public var didDismiss: ((Bool) -> Void)?
+    @objc public var didDismiss: ((Bool) -> Void)?
     
     // MARK: - Constraints
     
-    private(set) var contentLeftConstraint: NSLayoutConstraint!
-    private(set) var contentTopConstraint: NSLayoutConstraint!
-    private(set) var contentWidthConstraint: NSLayoutConstraint!
-    private(set) var contentHeightConstraint: NSLayoutConstraint!
+    @objc private(set) var contentLeftConstraint: NSLayoutConstraint!
+    @objc private(set) var contentTopConstraint: NSLayoutConstraint!
+    @objc private(set) var contentWidthConstraint: NSLayoutConstraint!
+    @objc private(set) var contentHeightConstraint: NSLayoutConstraint!
     
     /// The UIView instance of source view.
     fileprivate lazy var sourceViewAsUIView: UIView? = {
@@ -128,7 +128,7 @@ final public class PopMenuViewController: UIViewController {
     ///   - sourceView: the source view for triggering the menu
     ///   - actions: all the menu actions
     ///   - appearance: appearance configuration
-    public convenience init(sourceView: AnyObject? = nil, actions: [PopMenuAction], appearance: PopMenuAppearance? = nil) {
+    @objc public convenience init(sourceView: AnyObject? = nil, actions: [PopMenuAction], appearance: PopMenuAppearance? = nil) {
         self.init(nibName: nil, bundle: nil)
         
         self.sourceView = sourceView
@@ -147,7 +147,7 @@ final public class PopMenuViewController: UIViewController {
     }
     
     /// Load view entry point.
-    public override func loadView() {
+    @objc public override func loadView() {
         super.loadView()
 
         view.backgroundColor = .clear
